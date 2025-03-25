@@ -1,0 +1,95 @@
+Weather App
+
+Use an API (e.g., OpenWeatherMap) to fetch real-time weather data for a user-input location and display it.
+
+Skills Learned: API integration, JSON parsing, and libraries like requests.
+
+
+
+
+45538d00eb42b9342e585940afab0810
+
+
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&units=metric
+
+
+
+
+
+{
+    "coord": {
+        "lon": 74.0833,
+        "lat": 15.3333
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 29.25,
+        "feels_like": 31.14,
+        "temp_min": 29.25,
+        "temp_max": 29.25,
+        "pressure": 1008,
+        "humidity": 58,
+        "sea_level": 1008,
+        "grnd_level": 996
+    },
+    "visibility": 10000,
+    "wind": {
+       "speed": 2.42,
+        "deg": 284,
+        "gust": 3.99 
+    },
+    "clouds": {
+        "all": 99
+    },
+    "dt": 1741870404,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1741828382,
+        "sunset": 1741871609
+    },
+    "timezone": 19800,
+    "id": 1271157,
+    "name": "Goa",
+    "cod": 200
+}
+
+
+
+
+
+
+from datetime import datetime
+
+# Unix timestamp
+timestamp = 1741828382
+
+# Convert to a datetime object
+dt_object = datetime.utcfromtimestamp(timestamp)
+
+# Format the datetime object into a readable string
+formatted_time = dt_object.strftime("%Y-%m-%d %H:%M:%S")
+
+print("Date and Time (UTC):", formatted_time)
+
+
+
+
+99% Cloud Cover Indicates Overcast Sky
+
+
+
+
+
+
+
+
+
